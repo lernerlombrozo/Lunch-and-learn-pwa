@@ -1,0 +1,29 @@
+{
+  "name": "lunch-n-learn",
+  "version": "1.0.0",
+  "description": "a demo for the lunch n learn",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server -c-1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lernerlombrozo/Lunch-and-learn-pwa.git"
+  },
+  "keywords": [
+    "lunch",
+    "n",
+    "learn",
+    "pwa"
+  ],
+  "author": "David Lerner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lernerlombrozo/Lunch-and-learn-pwa/issues"
+  },
+  "homepage": "https://github.com/lernerlombrozo/Lunch-and-learn-pwa#readme",
+  "devDependencies": {
+    "http-server": "^0.12.3"
+  }
+}
