@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Lunch-n-learn</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/skeleton.css" />
+    <link rel="icon" type="image/png" href="/images/icon-chan.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="red">
+    <meta name="apple-mobile-web-app-title" content="L&L PWA">
+    <link rel="apple-touch-icon" href="/images/safari/mac-60x60.png" sizes="60x60">
+    <link rel="apple-touch-icon" href="/images/safari/mac-76x76.png" sizes="76x76">
+    <link rel="apple-touch-icon" href="/images/safari/mac-180x180.png" sizes="180x180">
+    <meta name="msapplication-TileImage" content="/src/images/icons/app-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#fff">
+    <meta name="theme-color" content="#3f51b5">
+    <script src="/app.js" defer></script>
+    <script src="geolocation.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="one-half column" style="margin-top: 25%">
+          <h4>Geolocation</h4>
+          <button onclick="getGeolocation()">Get Geolocation</button>
+          <p ></p>
+          <ul>
+            <li>
+              latitude: <b id="latitude"></b>
+            </li> 
+            <li>
+              longitude: <b id="longitude"></b>
+            </li>
+          </ul>
+          <a href="https://github.com/lernerlombrozo/Lunch-and-learn-pwa/blob/master/public/manifest.json">Github</a>
+          <a href=".." style="display: block; margin-top: 20px;">BACK</a>
+      </div>
+    </div>
+  </body>
+</html>
