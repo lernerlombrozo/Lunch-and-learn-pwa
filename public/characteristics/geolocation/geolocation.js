@@ -10,6 +10,8 @@ const getGeolocation = () => {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
   } else { 
-    geolocationElement.innerHTML = "Geolocation is not supported by this browser.";
+    const notSupportedMessage = "Geolocation is not supported by this browser.";
+    latitudeElement.innerHTML = notSupportedMessage;
+    longitudeElement.innerHTML = notSupportedMessage;
   }
 }
