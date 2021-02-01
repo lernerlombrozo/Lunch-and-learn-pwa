@@ -19,22 +19,17 @@
     <meta name="msapplication-TileColor" content="#fff">
     <meta name="theme-color" content="#3f51b5">
     <script src="/app.js" defer></script>
-    <script src="geolocation.js" defer></script>
+    <script src="./camera.js" defer></script>
+    <link rel="stylesheet" href="./camera.css"/>
   </head>
   <body>
     <div class="container">
       <div class="row">
         <div class="one-half column" style="margin-top: 25%">
-          <h4>Geolocation</h4>
-          <button onclick="getGeolocation()">Get Geolocation</button>
-          <ul>
-            <li>
-              latitude: <b id="latitude"></b>
-            </li> 
-            <li>
-              longitude: <b id="longitude"></b>
-            </li>
-          </ul>
+          <h4>Camera</h4>
+          <button onclick="getMedia()">Open camera</button>
+          <video id="video" autoplay></video>
+          <b id="error"></b>
           <a href="https://github.com/lernerlombrozo/Lunch-and-learn-pwa/blob/master/public/manifest.json">Github</a>
           <a href=".." style="display: block; margin-top: 20px;">BACK</a>
       </div>
