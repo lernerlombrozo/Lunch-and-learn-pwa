@@ -7,6 +7,7 @@
     <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="/css/normalize.css" />
     <link rel="stylesheet" href="/css/skeleton.css" />
+    <link rel="stylesheet" href="/css/animate.css" />
     <link rel="icon" type="image/png" href="/images/icon-chan.png" />
     <link rel="manifest" href="/manifest.json" />
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -19,29 +20,27 @@
     <meta name="msapplication-TileColor" content="#fff">
     <meta name="theme-color" content="#3f51b5">
     <script src="/app.js" defer></script>
+    <script src="./pwa-vs-native-stats.js" defer></script>
   </head>
   <body>
     <div class="container">
       <div class="row">
         <div class="one-half column" style="margin-top: 25%">
-          <h4>PWA</h4>
-          <ul>
-            <li>JavaScript</li>
-            <li>Website</li>
-            <li>Works on any browser</li>
-            <li>Access to key device features</li>
+          <h4>Native Apps</h4>
+          <ul id="native-list">
+            <li><a href=https://www.mobiloud.com/blog/mobile-apps-vs-the-mobile-web>>90% of time</a></li>
           </ul>
         </div>
+
         <div class="one-half column" style="margin-top: 25%">
-          <h4>Native</h4>
-          <ul>
-            <li>Swift and Java</li>
-            <li>App Store and Play Store</li>
-            <li>Works on specific devices</li>
-            <li>Access to all device features</li>
+          <h4>Mobile browser</h4>
+          <ul id="mobile-list">
+            <li><a href=https://www.mobiloud.com/blog/mobile-apps-vs-the-mobile-web>&#60;10% of time</a></li>
           </ul>
         </div>
-        <a href=".." style="display: block; margin-top: 20px;">BACK</a>
-    </div>
+      </div>
+      <button id="action-button" onclick="changeLists()" style="display: block; margin-top: 20px;">Then why use PWAs?</button>
+      <a href="../overview" style="display: block; margin-top: 20px;">Native aps Vs PWAs</a>
+      <a href=".." style="display: block; margin-top: 20px;">BACK</a>
   </body>
 </html>
