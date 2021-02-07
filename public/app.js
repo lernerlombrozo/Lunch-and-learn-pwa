@@ -9,3 +9,35 @@ if('serviceWorker' in navigator){
 window.addEventListener('beforeinstallprompt',() => {
   console.log('[app.js] before install prompt fired');
 })
+
+const displayConfirmNotification = () => {
+  const options = {
+    body: 'Thanks for subscribing to my notifications!',
+    icon: '/images/android/android-launchericon-96-96.png',
+    image: '/images/not-stephen.png',
+    dir: 'ltr',
+    lang: 'en-US',
+    vibrate: [100, 50, 200, 50, 300, 50, 400, 50, 500, 500, 100],
+    badge: '/images/android/android-launchericon-96-96.png'
+  }
+  if('serviceWorker' in navigator){
+    navigator.serviceWorker.ready.then((serviceWorkerRegistration)=>{
+      serviceWorkerRegistration.showNotification('Good job!', options)
+    })
+  }
+}
+
+const askForNotificationPermission = () => {
+  console.log('asking for permission')
+  if(!'Notification' in window){
+    alert('Please use a real browser');
+    return
+  }
+  Notification.requestPermission((result)=>{
+    if(result !== 'granted'){
+      alert('Do it manually')
+    } else {
+      displayConfirmNotification()
+    }
+  })
+}
