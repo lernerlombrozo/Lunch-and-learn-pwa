@@ -27,7 +27,6 @@ function precache(event){
         cache.addAll([
           '/',
           '/index.html',
-          '/404.html',
           '/offline.html',
           '/app.js',
           '/css/normalize.css',
