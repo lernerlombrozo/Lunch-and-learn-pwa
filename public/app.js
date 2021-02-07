@@ -17,7 +17,7 @@ const displayConfirmNotification = () => {
     image: '/images/not-stephen.png',
     dir: 'ltr',
     lang: 'en-US',
-    vibrate: [100, 50, 200, 50, 300, 50, 400, 50, 500, 500, 100],
+    vibrate: [1000, 1000, 3000],
     badge: '/images/android/android-launchericon-96-96.png'
   }
   if('serviceWorker' in navigator){
