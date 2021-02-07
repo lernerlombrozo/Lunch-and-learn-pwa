@@ -1,5 +1,5 @@
 
-const CACHE_STATIC_NAME = 'static-v1';
+const CACHE_STATIC_NAME = 'static-v2';
 const CACHE_DYNAMIC_NAME = 'dynamic-v1';
 
 self.addEventListener('install', (event) => {
@@ -28,6 +28,7 @@ function precache(event){
           '/',
           '/index.html',
           '/404.html',
+          '/offline.html',
           '/app.js',
           '/css/normalize.css',
           '/css/skeleton.css',
@@ -54,7 +55,9 @@ function cache(event){
                 })
             })
             .catch((err) => {
-              console.log(err)
+              return caches.open(CACHE_STATIC_NAME).then((cache)=>{
+                return cache.match('/offline.html')
+              })
             });
         }
       })
