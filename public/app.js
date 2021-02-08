@@ -14,7 +14,7 @@ const displayConfirmNotification = (swreg) => {
   const options = {
     body: 'Thanks for subscribing to my notifications!',
     icon: '/images/android/android-launchericon-96-96.png',
-    image: '/images/not-stephen.png',
+    image: '/images/washroom.jpeg',
     dir: 'ltr',
     lang: 'en-US',
     vibrate: [1000, 1000, 3000],

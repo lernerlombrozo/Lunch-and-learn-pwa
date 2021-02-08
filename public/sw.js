@@ -112,7 +112,7 @@ const showNotification = (event, title, body) => {
   const options = {
     body,
     icon: '/images/android/android-launchericon-96-96.png',
-    image: '/images/not-stephen.png',
+    image: '/images/washroom.jpeg',
     dir: 'ltr',
     lang: 'en-US',
     vibrate: [1000, 1000, 3000],
