@@ -18,6 +18,27 @@ self.addEventListener('fetch', (event) => {
   cache(event);
 });
 
+self.addEventListener('notificationclick', (event) => {
+  const notification = event.notification;
+  const action = notification.action;
+  console.log(  '[Service Worker] Notification clicked ...', notification);
+  switch(action) {
+    case 'confirm':
+      notification.close();
+      break;
+    case 'cancel':
+      notification.close();
+      break;
+    default:
+      // code block
+  }
+});
+
+self.addEventListener('notificationclose', (event) => {
+  // can be used for analytics
+  console.log(  '[Service Worker] Notification closed ...', event);
+});
+
 
 function precache(event){
   event.waitUntil(

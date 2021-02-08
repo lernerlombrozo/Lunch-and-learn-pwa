@@ -18,13 +18,16 @@
     <meta name="msapplication-TileImage" content="/images/android/android-launchericon-144-144.png">
     <meta name="msapplication-TileColor" content="#ff0000">
     <meta name="theme-color" content="#f2ff67">
-    <script src="/app.js" defer></script>
+    <script src="/app.js"></script>
+    <script src="./notifications.js"></script>
   </head>
   <body>
     <div class="container">
       <div class="row">
         <div class="one-half column" style="margin-top: 25%">
-          <button onclick="askForNotificationPermission()" id="enable-notifications">Send Notification</button>
+          <button onclick="askForNotificationPermission()" id="enable-notifications" class="u-full-width">Enable Notification</button>
+          <textarea id="message-input" class="u-full-width"></textarea>
+          <button onclick="createMessage()" id="enable-notifications" class="u-full-width">SendNotification</button>
       </div>
     </div>
   </body>
