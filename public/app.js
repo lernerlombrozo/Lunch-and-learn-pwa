@@ -48,7 +48,7 @@ const configurePushSubscription = () => {
   }).then((sub) => {
     if(sub === null){
       // create subscription
-      const vapidPublicKey = 'BJo1FQHmZHC9hLs5nSyNU0skCgzOPPboHOFgKg5usJTUHAIlJX69ccM7WIv4P5fqebZrCJb7F4mvLHLklmZ5ws0';
+      const vapidPublicKey = 'BJrQ6jC__eOJssMnePIGg6UrAMpJUvAze0AXF6Olhsw7VUZ4VVpyP76Q59_WjshVPIbo-fzCwjXjH0HF2y3NQNY';
       const convertedKey = urlBase64ToUint8Array(vapidPublicKey)
       return reg.pushManager.subscribe({
         userVisibleOnly: true,
@@ -59,7 +59,7 @@ const configurePushSubscription = () => {
       console.log('sub exists')
     }
   }).then((newSub)=>{
-    return addToFirebase('subscriptions', newSub)
+    return post('subscriptions', newSub)
   }).then((res)=>{
     if(res.ok){
       displayConfirmNotification(reg);
@@ -99,11 +99,11 @@ function urlBase64ToUint8Array(base64String) {
 }
 
 function sendMessage(message){
-  this.addToFirebase('messages', message)
+  this.post('messages', {message})
 }
 
-function addToFirebase(db, body){
-  return fetch(`https://lunch-n-learn-pwa-default-rtdb.firebaseio.com/${db}.json`,{
+function post(db, body){
+  return fetch(`https://lunch-n-learn-pwa.herokuapp.com/${db}`,{
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

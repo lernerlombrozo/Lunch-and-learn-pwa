@@ -30,13 +30,23 @@ self.addEventListener('notificationclick', (event) => {
       notification.close();
       break;
     default:
-      // code block
+      notification.close();
   }
 });
 
 self.addEventListener('notificationclose', (event) => {
   // can be used for analytics
   console.log(  '[Service Worker] Notification closed ...', event);
+});
+
+self.addEventListener('push', (event) => {
+  // can be used for analytics
+  console.log(  '[Service Worker] push ...', event);
+  let data = {title: 'New message!', content: 'You received a message'}
+  if(event.data){
+    data = JSON.parse(event.data.text())
+  }
+  showNotification(event, data.title, data.content)
 });
 
 
@@ -97,3 +107,31 @@ function clearCache(event){
       })
   );
 }
+
+const showNotification = (event, title, body) => {
+  const options = {
+    body,
+    icon: '/images/android/android-launchericon-96-96.png',
+    image: '/images/not-stephen.png',
+    dir: 'ltr',
+    lang: 'en-US',
+    vibrate: [1000, 1000, 3000],
+    badge: '/images/android/android-launchericon-96-96.png',
+    //tag: tag notifications will stack instead of showing additional notification,
+    //renotify: if set to true when there's a tag, will vibrate again
+    actions: [
+      {
+        action: 'confirm', 
+        title: 'OK', 
+        icon: '/images/android/android-launchericon-96-96.png'
+      },
+      {
+        action: 'cancel', 
+        title: 'Cancel', 
+        icon: '/images/android/android-launchericon-96-96.png'
+      }
+    ]
+  }
+  event.waitUntil(self.registration.showNotification(title, options))
+}
+
