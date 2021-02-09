@@ -18,23 +18,22 @@
     <meta name="msapplication-TileColor" content="#ff0000">
     <meta name="theme-color" content="#f2ff67">
     <script src="/app.js" defer></script>
-    <script src="geolocation.js" defer></script>
   </head>
   <body>
     <div class="container">
       <div class="row">
         <div class="one-half column" style="margin-top: 25%">
-          <h4>Geolocation</h4>
-          <button onclick="getGeolocation()">Get Geolocation</button>
-          <ul>
-            <li>
-              latitude: <b id="latitude"></b>
-            </li> 
-            <li>
-              longitude: <b id="longitude"></b>
-            </li>
-          </ul>
-          <a href="https://github.com/lernerlombrozo/Lunch-and-learn-pwa/tree/master/public/characteristics/geolocation">Github</a>
+          <h4>Work offline</h4>
+          <p>
+            A <a href="..">PWA</a> uses a js file called the <b>Service worker</b> it allows us to listen to certain events and decide our caching strategy.
+          </p>
+          <p>Some caching strategies:</p>
+          <ul>Only Network</ul>
+          <ul>Cache then Network</ul>
+          <ul>Network then Cache</ul>
+          <ul>First of Cache and Network</ul>
+          <ul>First of Cache and Network but keep network</ul>
+          <a href="https://github.com/lernerlombrozo/Lunch-and-learn-pwa/blob/master/public/sw.js">Github</a>
           <a href=".." style="display: block; margin-top: 20px;">BACK</a>
       </div>
     </div>
