@@ -102,8 +102,10 @@ function sendMessage(message){
   this.post('messages', {message})
 }
 
+const backendURL = 'https://blooming-headland-12022.herokuapp.com';
+
 function post(db, body){
-  return fetch(`https://blooming-headland-12022.herokuapp.com/${db}`,{
+  return fetch(`${backendURL}/${db}`,{
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
