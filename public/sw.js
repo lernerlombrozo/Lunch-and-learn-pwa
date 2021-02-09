@@ -111,24 +111,24 @@ function clearCache(event){
 const showNotification = (event, title, body) => {
   const options = {
     body,
-    icon: '/images/android/android-launchericon-96-96.png',
+    icon: '/images/icon-chan96x96.png',
     image: '/images/washroom.jpeg',
     dir: 'ltr',
     lang: 'en-US',
     vibrate: [1000, 1000, 3000],
-    badge: '/images/android/android-launchericon-96-96.png',
+    badge: '/images/icon-chan96x96.png',
     //tag: tag notifications will stack instead of showing additional notification,
     //renotify: if set to true when there's a tag, will vibrate again
     actions: [
       {
         action: 'confirm', 
         title: 'OK', 
-        icon: '/images/android/android-launchericon-96-96.png'
+        icon: '/images/icon-chan96x96.png'
       },
       {
         action: 'cancel', 
         title: 'Cancel', 
-        icon: '/images/android/android-launchericon-96-96.png'
+        icon: '/images/icon-chan96x96.png'
       }
     ]
   }
