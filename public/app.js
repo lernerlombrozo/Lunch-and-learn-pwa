@@ -103,7 +103,7 @@ function sendMessage(message){
 }
 
 function post(db, body){
-  return fetch(`https://lunch-n-learn-pwa.herokuapp.com/${db}`,{
+  return fetch(`https://blooming-headland-12022.herokuapp.com/${db}`,{
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
