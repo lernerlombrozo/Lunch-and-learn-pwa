@@ -1,5 +1,5 @@
 let vibrateInterval;
-
+let isVibrating = false;
 // Starts vibration at passed in level
 function startVibrate(duration) {
     navigator.vibrate(duration);
@@ -21,9 +21,11 @@ function startPersistentVibrate(duration, interval) {
 }
 
 function toggleVibrate(){
-  if(vibrateInterval){
+  if(isVibrating){
     stopVibrate();
+    isVibrating = false
     return
   }
   startPersistentVibrate(100, 100)
+  isVibrating = true
 }
